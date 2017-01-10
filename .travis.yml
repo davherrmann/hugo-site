@@ -1,6 +1,4 @@
-language: generic
+language: go
 
-before_install:
-  - sudo apt-get update
-  - sudo apt-get install snapd snap-confine
-  - snap install hugo
+install:
+  - go get -v github.com/spf13/hugo
