@@ -18,7 +18,7 @@ after_success:
   - ssh-add id_rsa_travis_deploy_gh_pages
   - cd public
   - git init
-  - git remote add origin git@github.com/davherrmann/i.love.software.git
+  - git remote add origin https://github.com/davherrmann/i.love.software
   - git checkout -b gh-pages
   - git add --all
   - git commit -m "rebuild website triggered by commit ${TRAVIS_COMMIT}"
