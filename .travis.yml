@@ -1,4 +1,8 @@
 language: go
 install: go get -v github.com/spf13/hugo
 script:
-  - hugo
+  - mkdir themes
+  - cd themes
+  - git clone https://github.com/spf13/hyde
+  - cd ..
+  - hugo --theme=hyde
