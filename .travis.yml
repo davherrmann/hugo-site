@@ -20,7 +20,7 @@ after_success:
   - git config user.name "davherrmann"
   - git config user.email "davherrmann@googlemail.com"
   - git init
-  - git remote add origin https://github.com/davherrmann/i.love.software
+  - git remote add origin git@github.com:davherrmann/i.love.software.git
   - git checkout -b gh-pages
   - git add --all
   - git commit -m "rebuild website triggered by commit ${TRAVIS_COMMIT}"
