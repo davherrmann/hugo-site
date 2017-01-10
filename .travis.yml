@@ -17,6 +17,8 @@ after_success:
   - eval `ssh-agent -s`
   - ssh-add id_rsa_travis_deploy_gh_pages
   - cd public
+  - git config user.name "davherrmann"
+  - git config user.email "davherrmann@googlemail.com"
   - git init
   - git remote add origin https://github.com/davherrmann/i.love.software
   - git checkout -b gh-pages
