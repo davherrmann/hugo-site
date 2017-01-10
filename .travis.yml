@@ -10,3 +10,6 @@ script:
   - git clone https://github.com/spf13/hyde.git
   - cd ..
   - hugo --theme=hyde
+
+deploy:
+  - openssl aes-256-cbc -K $encrypted_f4bf9b6bfcf8_key -iv $encrypted_f4bf9b6bfcf8_iv -in id_rsa_travis_deploy_gh_pages.enc -out id_rsa_travis_deploy_gh_pages -d
