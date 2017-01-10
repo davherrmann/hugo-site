@@ -5,4 +5,11 @@ draft = false
 
 +++
 
-Working on *gradients* with three.js.
+#Working on *gradients* with three.js.
+
+Testing some embedded code: 
+
+```javascript
+const a = {x: 1}
+const b = Object.assign(a, {y: 2})
+```
