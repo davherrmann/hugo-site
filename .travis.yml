@@ -1,3 +1,5 @@
+language: generic
+
 before_install:
   - sudo apt-get install snapd snap-confine
   - snap install hugo
