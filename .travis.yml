@@ -24,4 +24,4 @@ after_success:
   - git checkout -b gh-pages
   - git add --all
   - git commit -m "rebuild website triggered by commit ${TRAVIS_COMMIT}"
-  - git push origin gh-pages
+  - git push -f origin gh-pages
