@@ -6,4 +6,7 @@ before_install:
   - sudo dpkg -i hugo_0.18.1-64bit.deb
 
 script:
+  - mkdir themes && cd themes
+  - git clone https://github.com/spf13/hyde.git
+  - cd ..
   - hugo --theme=hyde
