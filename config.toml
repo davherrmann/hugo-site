@@ -1,6 +1,6 @@
 languageCode = "en-uk"
 title = "I love software"
-baseurl = "https://davherrmann.github.io/"
+baseurl = "https://i.love.software/"
 
 [Params]
   Author = "David Herrmann"
