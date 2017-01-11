@@ -6,10 +6,16 @@ branches:
   - sources
 
 before_install:
-  - wget https://github.com/spf13/hugo/releases/download/v0.18.1/hugo_0.18.1-64bit.deb
-  - sudo dpkg -i hugo_0.18.1-64bit.deb
+  - openssl aes-256-cbc -K $encrypted_f4bf9b6bfcf8_key -iv $encrypted_f4bf9b6bfcf8_iv -in id_rsa_travis_deploy_gh_pages.enc -out id_rsa_travis_deploy_gh_pages -d
+  - chmod 600 id_rsa_travis_deploy_gh_pages
+  - eval `ssh-agent -s`
+  - ssh-add id_rsa_travis_deploy_gh_pages
   - git config user.name "davherrmann"
   - git config user.email "davherrmann@googlemail.com"
+
+install:
+  - wget https://github.com/spf13/hugo/releases/download/v0.18.1/hugo_0.18.1-64bit.deb
+  - sudo dpkg -i hugo_0.18.1-64bit.deb
 
 script:
   - mkdir themes && cd themes
@@ -19,10 +25,6 @@ script:
   - hugo --theme=hyde
 
 after_success:
-  - openssl aes-256-cbc -K $encrypted_f4bf9b6bfcf8_key -iv $encrypted_f4bf9b6bfcf8_iv -in id_rsa_travis_deploy_gh_pages.enc -out id_rsa_travis_deploy_gh_pages -d
-  - chmod 600 id_rsa_travis_deploy_gh_pages
-  - eval `ssh-agent -s`
-  - ssh-add id_rsa_travis_deploy_gh_pages
   - cd public
   - git add --all
   - git commit -m "rebuild website triggered by commit ${TRAVIS_COMMIT}"
