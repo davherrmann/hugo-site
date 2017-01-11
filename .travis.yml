@@ -18,11 +18,8 @@ install:
   - sudo dpkg -i hugo_0.18.1-64bit.deb
 
 script:
-  - mkdir themes && cd themes
-  - git clone https://github.com/spf13/hyde.git
-  - cd ..
   - git clone git@github.com:davherrmann/davherrmann.github.io.git public --branch master --single-branch
-  - hugo --theme=hyde
+  - hugo
 
 after_success:
   - cd public
