@@ -5,7 +5,7 @@ draft = false
 
 +++
 
-##Working on *gradients* with three.js.
+##Working with *gradients* in three.js.
 
 Testing some embedded code:
 
