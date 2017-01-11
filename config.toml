@@ -12,3 +12,8 @@ theme = "i-love-software"
   github = "https://github.com/davherrmann"
   disqus = "davherrmann"
   copyright = "© David Herrmann"
+
+[[menu.main]]
+  name = "Blog"
+  identifier = "blog"
+  url = "/post/"

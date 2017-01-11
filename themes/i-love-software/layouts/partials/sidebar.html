@@ -1,5 +1,5 @@
 <div class="sidebar">
-  <div class="container sidebar-sticky">
+  <div class="container">
     <div class="sidebar-about">
       <a href="{{ .Site.BaseURL }}"><h1>{{ .Site.Title }}</h1></a>
       <p class="lead">
@@ -14,6 +14,6 @@
       {{end}}
     </ul>
 
-    <p>{{ .Site.Params.copyright }}</p>
+    <p class="footnote">{{ .Site.Params.copyright }}</p>
   </div>
 </div>
