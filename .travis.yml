@@ -8,6 +8,8 @@ branches:
 before_install:
   - wget https://github.com/spf13/hugo/releases/download/v0.18.1/hugo_0.18.1-64bit.deb
   - sudo dpkg -i hugo_0.18.1-64bit.deb
+  - git config user.name "davherrmann"
+  - git config user.email "davherrmann@googlemail.com"
 
 script:
   - mkdir themes && cd themes
@@ -22,8 +24,6 @@ after_success:
   - eval `ssh-agent -s`
   - ssh-add id_rsa_travis_deploy_gh_pages
   - cd public
-  - git config user.name "davherrmann"
-  - git config user.email "davherrmann@googlemail.com"
   - git add --all
   - git commit -m "rebuild website triggered by commit ${TRAVIS_COMMIT}"
   - git push origin master
