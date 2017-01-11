@@ -9,6 +9,10 @@
   font-size: 2.4rem;
 }
 
+.sidebar-about a:hover {
+  text-decoration: none;
+}
+
 p.footnote {
   margin-bottom: 0;
 }
