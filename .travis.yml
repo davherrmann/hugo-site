@@ -13,6 +13,7 @@ script:
   - mkdir themes && cd themes
   - git clone https://github.com/spf13/hyde.git
   - cd ..
+  - git clone git@github.com:davherrmann/davherrmann.github.io.git public --branch master --single-branch
   - hugo --theme=hyde
 
 after_success:
@@ -23,9 +24,6 @@ after_success:
   - cd public
   - git config user.name "davherrmann"
   - git config user.email "davherrmann@googlemail.com"
-  - git init
-  - git remote add origin git@github.com:davherrmann/davherrmann.github.io.git
-  - git checkout -b master
   - git add --all
   - git commit -m "rebuild website triggered by commit ${TRAVIS_COMMIT}"
-  - git push -f origin master
+  - git push origin master
