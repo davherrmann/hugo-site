@@ -1,0 +1,14 @@
+.sidebar {
+  background-color: #49045f;
+  color: rgba(255,255,255,.75);
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+
+.sidebar-about h1 {
+  font-size: 2.4rem;
+}
+
+p.footnote {
+  margin-bottom: 0;
+}
