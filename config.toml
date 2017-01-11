@@ -1,6 +1,14 @@
-languageCode = "en-uk"
-title = "I love software"
+languageCode = "en-GB"
+title = "I ♡ SOFTWARE"
 baseurl = "https://i.love.software/"
+theme = "i-love-software"
+
+[Author]
+  name = "David Herrmann"
 
 [Params]
-  Author = "David Herrmann"
+  description = "code by David Herrmann"
+  twitter = "https://twitter.com/davherrmann"
+  github = "https://github.com/davherrmann"
+  disqus = "davherrmann"
+  copyright = "© David Herrmann"

@@ -1,0 +1,12 @@
+name = "i-love-software"
+license = "MIT"
+licenselink = "https://github.com/davherrmann/i-love-software/blob/master/LICENSE.md"
+description = ""
+homepage = "https://github.com/davherrmann/i-love-software"
+tags = ["", ""]
+features = ["", ""]
+min_version = 0.18
+
+[author]
+  name = "David Herrmann"
+  homepage = "https://i.love.software"
