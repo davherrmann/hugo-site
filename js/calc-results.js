@@ -31,7 +31,7 @@ function loadScript(url, callback) {
   head.appendChild(script);
 }
 
-function loop(callback) {
+function startLoop(callback) {
   const renderFrame = () => {
     requestAnimationFrame(renderFrame)
     callback()
@@ -39,7 +39,7 @@ function loop(callback) {
   renderFrame()
 }
 
-function createThreeScene(callback) {
+function three(init) {
   const currentContainer = container
   loadScript('https://cdnjs.cloudflare.com/ajax/libs/three.js/r83/three.min.js', () => {
     const width = currentContainer.offsetWidth
@@ -68,7 +68,24 @@ function createThreeScene(callback) {
 
     window.addEventListener( 'resize', onWindowResize, false );
 
-    callback(scene, renderer, camera)
+    const render = (updateFn) => {
+      startLoop(() => {
+        updateFn()
+        renderer.render(scene, camera)
+      })
+    }
+
+    const renderOnce = () => {
+      renderer.render(scene, camera)
+    }
+
+    init({
+      scene,
+      renderer,
+      camera,
+      render,
+      renderOnce
+    })
   })
 }
 
