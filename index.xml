@@ -24,9 +24,17 @@ display(a, b)
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;canvas(({context, width, height}) =&amp;gt; {
-  context.moveTo(0,0)
-  context.lineTo(width, height)
-  context.stroke()
+  context.beginPath();
+  context.arc(
+    width / 2,
+    height / 2,
+    Math.min(width, height) * 0.3,
+    0,
+    Math.PI * 2,
+    true
+  )
+  context.fillStyle = &#39;#49045f&#39;;
+  context.fill();
 })
 &lt;/code&gt;&lt;/pre&gt;
 
