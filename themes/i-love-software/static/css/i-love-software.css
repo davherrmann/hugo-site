@@ -45,3 +45,13 @@ pre, pre[class*=language-] {
 .result-container {
   margin-bottom: 1rem;
 }
+
+.result-container pre {
+  position: relative;
+}
+
+.result-container i {
+  font-size: 1rem;
+  position: absolute;
+  right: 1rem;
+}

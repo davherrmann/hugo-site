@@ -88,7 +88,7 @@ function createCanvas() {
 function display(...objects) {
   objects.forEach(o => {
     const prettyObject = JSON.stringify(o)
-    const element = createElementFrom(`<pre><code>${prettyObject}</code></pre>`)
+    const element = createElementFrom(`<pre><code>${prettyObject}</code><i class="fa fa-check-circle-o" aria-hidden="true"></i></pre>`)
     container.appendChild(element)
   })
 }
