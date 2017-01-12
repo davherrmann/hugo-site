@@ -10,9 +10,13 @@ Testing some embedded code:
 ```javascript
 const a = {x: 1}
 const b = Object.assign(a, {y: 2})
-display(a)
+display(a, b)
 ```
 
 ```javascript
 const canvas = createCanvas()
+var ctx = canvas.getContext("2d");
+ctx.moveTo(0,0);
+ctx.lineTo(canvas.width,canvas.height);
+ctx.stroke();
 ```
