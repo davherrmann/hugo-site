@@ -89,17 +89,31 @@ function three(init) {
   })
 }
 
-function createCanvas() {
+function canvas(renderFn) {
+  const currentContainer = container
   const pixelRatio = window.devicePixelRatio
-  const width = container.offsetWidth
-  const height = 300
+  const canvas = container.appendChild(document.createElement('canvas'))
+  const context = canvas.getContext('2d')
 
-  const canvas = document.createElement('canvas')
-  canvas.width = width * pixelRatio
-  canvas.height = height * pixelRatio
-  canvas.style.width = width + 'px'
-  canvas.style.height = height + 'px'
-  return container.appendChild(canvas)
+  const resizeAndRender = () => {
+    const width = currentContainer.offsetWidth
+    const height = 300
+
+    canvas.width = width * pixelRatio
+    canvas.height = height * pixelRatio
+    canvas.style.width = width + 'px'
+    canvas.style.height = height + 'px'
+
+    renderFn({
+      context,
+      width: canvas.width,
+      height: canvas.height
+    })
+  }
+
+  window.addEventListener('resize', resizeAndRender, false)
+
+  resizeAndRender()
 }
 
 function display(...objects) {

@@ -14,11 +14,11 @@ display(a, b)
 ```
 
 ```javascript
-const canvas = createCanvas()
-var ctx = canvas.getContext("2d");
-ctx.moveTo(0,0);
-ctx.lineTo(canvas.width,canvas.height);
-ctx.stroke();
+canvas(({context, width, height}) => {
+  context.moveTo(0,0)
+  context.lineTo(width, height)
+  context.stroke()
+})
 ```
 
 ```javascript
