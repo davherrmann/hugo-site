@@ -64,7 +64,6 @@ function three(init) {
       camera.updateProjectionMatrix()
 
       renderer.setSize(width, height)
-      renderer.render(scene, camera)
     }
 
     window.addEventListener( 'resize', onWindowResize, false );
