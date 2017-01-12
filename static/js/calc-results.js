@@ -56,6 +56,18 @@ function createThreeScene(callback) {
 
     currentContainer.appendChild(renderer.domElement);
 
+    const onWindowResize = () => {
+      const width = currentContainer.offsetWidth
+      const height = 300
+
+      camera.aspect = width / height
+      camera.updateProjectionMatrix()
+
+      renderer.setSize(width, height)
+    }
+
+    window.addEventListener( 'resize', onWindowResize, false );
+
     callback(scene, renderer, camera)
   })
 }
