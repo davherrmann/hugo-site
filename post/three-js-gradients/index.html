@@ -74,11 +74,11 @@ const b = Object.assign(a, {y: 2})
 display(a, b)
 </code></pre>
 
-<pre><code class="language-javascript">const canvas = createCanvas()
-var ctx = canvas.getContext(&quot;2d&quot;);
-ctx.moveTo(0,0);
-ctx.lineTo(canvas.width,canvas.height);
-ctx.stroke();
+<pre><code class="language-javascript">canvas(({context, width, height}) =&gt; {
+  context.moveTo(0,0)
+  context.lineTo(width, height)
+  context.stroke()
+})
 </code></pre>
 
 <pre><code class="language-javascript">three(({scene, render}) =&gt; {
