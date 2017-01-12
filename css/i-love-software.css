@@ -50,8 +50,21 @@ pre, pre[class*=language-] {
   position: relative;
 }
 
-.result-container i {
+.result-container .fa {
+  animation-name: fontAwesomeFade;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-out;
+  animation-duration: 0.6s;
   font-size: 1rem;
   position: absolute;
   right: 1rem;
+}
+
+@keyframes fontAwesomeFade {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
 }
