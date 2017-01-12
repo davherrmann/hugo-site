@@ -10,4 +10,9 @@ Testing some embedded code:
 ```javascript
 const a = {x: 1}
 const b = Object.assign(a, {y: 2})
+display(a)
+```
+
+```javascript
+const canvas = createCanvas()
 ```
