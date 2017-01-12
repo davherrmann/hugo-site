@@ -81,6 +81,22 @@ ctx.lineTo(canvas.width,canvas.height);
 ctx.stroke();
 </code></pre>
 
+<pre><code class="language-javascript">createThreeScene((scene, renderer, camera) =&gt; {
+  const geometry = new THREE.CubeGeometry(200, 200, 200);
+  const material = new THREE.MeshNormalMaterial();
+
+  const mesh = new THREE.Mesh(geometry, material);
+  scene.add(mesh);
+
+  loop(() =&gt; {
+    mesh.rotation.x += 0.01;
+    mesh.rotation.y += 0.02;
+
+    renderer.render(scene, camera);    
+  })
+})
+</code></pre>
+
   </div>
 
   

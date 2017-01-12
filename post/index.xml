@@ -29,6 +29,22 @@ ctx.moveTo(0,0);
 ctx.lineTo(canvas.width,canvas.height);
 ctx.stroke();
 &lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;createThreeScene((scene, renderer, camera) =&amp;gt; {
+  const geometry = new THREE.CubeGeometry(200, 200, 200);
+  const material = new THREE.MeshNormalMaterial();
+
+  const mesh = new THREE.Mesh(geometry, material);
+  scene.add(mesh);
+
+  loop(() =&amp;gt; {
+    mesh.rotation.x += 0.01;
+    mesh.rotation.y += 0.02;
+
+    renderer.render(scene, camera);    
+  })
+})
+&lt;/code&gt;&lt;/pre&gt;
 </description>
     </item>
     
