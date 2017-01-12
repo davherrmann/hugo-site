@@ -77,10 +77,14 @@
 
 <pre><code class="language-javascript">const a = {x: 1}
 const b = Object.assign(a, {y: 2})
-display(a)
+display(a, b)
 </code></pre>
 
 <pre><code class="language-javascript">const canvas = createCanvas()
+var ctx = canvas.getContext(&quot;2d&quot;);
+ctx.moveTo(0,0);
+ctx.lineTo(canvas.width,canvas.height);
+ctx.stroke();
 </code></pre>
 
       </div>

@@ -20,10 +20,14 @@
 
 &lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;const a = {x: 1}
 const b = Object.assign(a, {y: 2})
-display(a)
+display(a, b)
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;const canvas = createCanvas()
+var ctx = canvas.getContext(&amp;quot;2d&amp;quot;);
+ctx.moveTo(0,0);
+ctx.lineTo(canvas.width,canvas.height);
+ctx.stroke();
 &lt;/code&gt;&lt;/pre&gt;
 </description>
     </item>
