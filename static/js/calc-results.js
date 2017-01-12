@@ -20,11 +20,15 @@ function createContainer(element) {
 }
 
 function createCanvas() {
+  const pixelRatio = window.devicePixelRatio
+  const width = container.offsetWidth
+  const height = 300
+
   const canvas = document.createElement('canvas')
-  canvas.width = container.offsetWidth * window.devicePixelRatio
-  canvas.height = 300 * window.devicePixelRatio
-  canvas.style.width = container.offsetWidth + 'px'
-  canvas.style.height = 300 + 'px'
+  canvas.width = width * pixelRatio
+  canvas.height = height * pixelRatio
+  canvas.style.width = width + 'px'
+  canvas.style.height = height + 'px'
   return container.appendChild(canvas)
 }
 
