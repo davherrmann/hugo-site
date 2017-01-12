@@ -22,18 +22,16 @@ ctx.stroke();
 ```
 
 ```javascript
-createThreeScene((scene, renderer, camera) => {
-  const geometry = new THREE.CubeGeometry(200, 200, 200);
-  const material = new THREE.MeshNormalMaterial();
+three(({scene, render}) => {
+  const geometry = new THREE.CubeGeometry(200, 200, 200)
+  const material = new THREE.MeshNormalMaterial()
 
-  const mesh = new THREE.Mesh(geometry, material);
-  scene.add(mesh);
+  const mesh = new THREE.Mesh(geometry, material)
+  scene.add(mesh)
 
-  loop(() => {
+  render(() => {
     mesh.rotation.x += 0.01;
     mesh.rotation.y += 0.02;
-
-    renderer.render(scene, camera);    
   })
 })
 ```
