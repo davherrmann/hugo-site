@@ -15,9 +15,17 @@ display(a, b)
 
 ```javascript
 canvas(({context, width, height}) => {
-  context.moveTo(0,0)
-  context.lineTo(width, height)
-  context.stroke()
+  context.beginPath();
+  context.arc(
+    width / 2,
+    height / 2,
+    Math.min(width, height) * 0.3,
+    0,
+    Math.PI * 2,
+    true
+  )
+  context.fillStyle = '#49045f';
+  context.fill();
 })
 ```
 
