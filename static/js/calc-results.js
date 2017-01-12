@@ -19,6 +19,47 @@ function createContainer(element) {
   return element.parentNode.insertBefore(div.firstChild, element.nextSibling)
 }
 
+function loadScript(url, callback) {
+  const head = document.getElementsByTagName('head')[0];
+  const script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src = url;
+
+  script.onreadystatechange = callback;
+  script.onload = callback;
+
+  head.appendChild(script);
+}
+
+function loop(callback) {
+  const renderFrame = () => {
+    requestAnimationFrame(renderFrame)
+    callback()
+  }
+  renderFrame()
+}
+
+function createThreeScene(callback) {
+  const currentContainer = container
+  loadScript('https://cdnjs.cloudflare.com/ajax/libs/three.js/r83/three.min.js', () => {
+    const width = currentContainer.offsetWidth
+    const height = 300
+
+    scene = new THREE.Scene();
+
+    camera = new THREE.PerspectiveCamera(50, width / height, 1, 10000);
+    camera.position.z = 500;
+    scene.add(camera);
+
+    renderer = new THREE.WebGLRenderer({antialias: true, alpha: true});
+    renderer.setSize(width, height);
+
+    currentContainer.appendChild(renderer.domElement);
+
+    callback(scene, renderer, camera)
+  })
+}
+
 function createCanvas() {
   const pixelRatio = window.devicePixelRatio
   const width = container.offsetWidth
