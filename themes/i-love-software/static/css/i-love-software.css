@@ -36,7 +36,12 @@ p.footnote {
   margin-bottom: 0;
 }
 
-pre[class*=language-] {
+pre, pre[class*=language-] {
   background-color: #f9f9f9;
+  margin: .5em 0;
   padding: 1rem;
+}
+
+.result-container {
+  margin-bottom: 1rem;
 }
